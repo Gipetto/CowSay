@@ -5,6 +5,12 @@
 An extensible PHP port of the [Linux Cowsay](http://en.wikipedia.org/wiki/Cowsay) utility. This library is not designed
 for command line use. You should install the original Cowsay for that.
 
+## Requirements
+
+- PHP 5.4+
+
+## Quickstart
+
 ```php
 $bessie = new Cow('Hello, Farm!');
 echo $bessie;
@@ -27,7 +33,7 @@ Run `php demo.php` to see all the included cows and their traits.
 
 ## Traits
 
-Cows support a few traits. You can specify the eyes, tongue, udder and, yes, you can specify poop.
+Cows support a few traits. You can specify the Eyes, Tongue, Udder and, yes, you can specify Poop.
 
 ```php
 $bessie = new Cow('Hello, Farm!');
