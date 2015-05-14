@@ -1,0 +1,30 @@
+{
+    "name": "gipetto/cow-say",
+    "description": "An extensible PHP port of the Cowsay linux utility",
+    "homepage": "http://github.com/Gipetto/CowSay",
+    "license": "MIT",
+    "keywords": [
+        "cows"
+    ],
+    "authors": [
+        {
+            "name": "Shawn Parker",
+            "email": "shawn@topfroggraphics.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.5.*"
+    },
+    "autoload": {
+        "files": [
+            "src/CowSay.php"
+        ]
+    },
+    "support": {
+        "issues": "https://github.com/Gipetto/cowsay/issues"
+    }
+}

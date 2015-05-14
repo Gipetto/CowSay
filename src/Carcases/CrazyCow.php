@@ -1,0 +1,19 @@
+<?php
+
+namespace CowSay;
+
+
+use CowSay\Cow;
+
+/**
+ * Class CrazyCow
+ * I know you are but what am i?
+ *
+ * @package CowSay
+ */
+class CrazyCow extends Cow {
+
+	protected $eyes = 'oO';
+	protected $tongue = 'U';
+
+}
