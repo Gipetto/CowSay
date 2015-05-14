@@ -51,6 +51,11 @@ Displays:
                   ||     || @@@
 ```
 
+## Adding new Carcases
+
+CowSay is easily extended to add new carcases for your custom needs. See the [Carcasses](Carcasses.md) tutorial for more
+information.
+
 ## License
 
 CowSay is licenced under [The MIT License (MIT)](LICENSE.txt).

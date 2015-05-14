@@ -1,5 +1,5 @@
 {
-    "name": "gipetto/cow-say",
+    "name": "Gipetto/CowSay",
     "description": "An extensible PHP port of the Cowsay linux utility",
     "homepage": "http://github.com/Gipetto/CowSay",
     "license": "MIT",
@@ -25,6 +25,6 @@
         ]
     },
     "support": {
-        "issues": "https://github.com/Gipetto/cowsay/issues"
+        "issues": "https://github.com/Gipetto/CowSay/issues"
     }
 }
