@@ -1,4 +1,4 @@
-Copyright (c) 2014 Michael Dowling, https://github.com/mtdowling <mtdowling@gmail.com>
+Copyright (c) 2014 Shawn Parker, https://github.com/gipetto
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
