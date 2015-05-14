@@ -23,6 +23,8 @@ Displays:
                   ||     ||
 ```
 
+Run `php demo.php` to see all the included cows and their traits.
+
 ## Traits
 
 Cows support a few traits. You can specify the eyes, tongue, udder and, yes, you can specify poop.
@@ -45,6 +47,10 @@ Displays:
           \   ^__^
            \  (oO)\_______
               (__)\       )\/\
-                U ||----W |
+               U  ||----W |
                   ||     || @@@
 ```
+
+## License
+
+CowSay is licenced under [The MIT License (MIT)](LICENSE.txt).
