@@ -9,6 +9,6 @@ test-install:
 	$(COMPOSER) install
 
 test:
-	@PATH=vendor/bin:$(PATH) phpunit --coverage-clover \
+	@PATH=vendor/bin:$(PATH) phpunit --coverage-clover clover.xml \
 		--colors \
 		--configuration tests/phpunit.xml;

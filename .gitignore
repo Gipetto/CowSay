@@ -3,3 +3,4 @@ composer.phar
 .idea
 nbproject
 vendor
+clover.xml
