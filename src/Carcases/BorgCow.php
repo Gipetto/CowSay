@@ -6,8 +6,8 @@ namespace CowSay;
 use CowSay\Cow;
 
 /**
- * Class ParanoidCow
- * I know they're out to get me...
+ * Class BorgCow
+ * Resistance is futile!
  *
  * @package CowSay\Carcases
  */

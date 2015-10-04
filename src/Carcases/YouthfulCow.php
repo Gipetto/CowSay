@@ -7,7 +7,7 @@ use CowSay\Cow;
 
 /**
  * Class YouthfulCow
- * I know you are but what am i?
+ * Like, yeah, man.
  *
  * @package CowSay\Carcases
  */

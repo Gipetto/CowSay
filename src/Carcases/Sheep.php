@@ -3,8 +3,8 @@
 namespace CowSay;
 
 /**
- * Class Tux.
- * Penguins are simple creatures. No Traits.
+ * Class Sheep.
+ * Baa!
  *
  * @package CowSay
  */

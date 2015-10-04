@@ -6,8 +6,8 @@ namespace CowSay;
 use CowSay\Cow;
 
 /**
- * Class ParanoidCow
- * Resistance is futile!
+ * Class GreedyCow
+ * The Donald Trump of Cows.
  *
  * @package CowSay\Carcases
  */

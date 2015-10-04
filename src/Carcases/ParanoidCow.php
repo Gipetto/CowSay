@@ -7,7 +7,7 @@ use CowSay\Cow;
 
 /**
  * Class ParanoidCow
- * Resistance is futile!
+ * They're coming to get you, Martha!
  *
  * @package CowSay\Carcases
  */

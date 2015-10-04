@@ -2,6 +2,7 @@
 
 namespace CowSay;
 
+
 /**
  * Class Calf
  * @package CowSay
@@ -15,7 +16,7 @@ abstract class Calf {
 	const DEFAULT_MAX_LEN = 50;
 
 	/**
-	 * @var string cow!
+	 * @var string carcass!
 	 */
 	protected $carcass;
 
@@ -44,7 +45,8 @@ abstract class Calf {
 	}
 
 	/**
-	 * Output the Complete message and cow.*
+	 * Output the Complete message and cow.
+	 *
 	 * @return string
 	 */
 	public function say() {
@@ -53,6 +55,7 @@ abstract class Calf {
 
 	/**
 	 * Return the cow template with eyes & tongue replaces
+	 *
 	 * @return string
 	 */
 	abstract public function buildCarcass();
