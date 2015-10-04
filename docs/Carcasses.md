@@ -143,4 +143,4 @@ To get
 
 ## Enjoy!
 
-The [fully annotated Bear](src/Carcases/Bear.php) is included with the default carcasses.
+The [fully annotated Bear](../src/Carcases/Bear.php) is included with the default carcasses.
