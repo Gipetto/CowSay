@@ -62,7 +62,7 @@ Displays:
 
 ## Adding new Carcases
 
-CowSay is easily extended to add new carcases for your custom needs. See the [Carcasses](Carcasses.md) tutorial for more
+CowSay is easily extended to add new carcases for your custom needs. See the [Carcasses](docs/Carcasses.md) tutorial for more
 information.
 
 ## License
