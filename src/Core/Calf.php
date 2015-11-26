@@ -50,7 +50,7 @@ abstract class Calf {
 	 * @return string
 	 */
 	public function say() {
-		return $this->formatMessage($this->message) . $this->buildCarcass();
+		return $this->formatMessage() . $this->buildCarcass();
 	}
 
 	/**
