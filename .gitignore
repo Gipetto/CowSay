@@ -4,3 +4,4 @@ composer.phar
 nbproject
 vendor
 clover.xml
+composer.lock
