@@ -7,9 +7,7 @@ Create your Cow file. In this example we'll create a Bear
 ```php
 <?php
 
-require 'CowSay.php';
-
-class Bear extends \CowSay\Calf {
+class Bear extends \CowSay\Core\Calf {
 	
 	protected $carcass = <<<BEAR
      \
@@ -71,7 +69,7 @@ Next we'll need to make the eyes in the carcass replaceable. You can use any of 
 
 require 'CowSay.php';
 
-class Bear extends \CowSay\Calf {
+class Bear extends \CowSay\Core\Calf {
 
 	use \CowSay\Traits\Eyes;
 

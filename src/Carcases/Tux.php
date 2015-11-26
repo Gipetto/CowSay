@@ -8,7 +8,7 @@ namespace CowSay;
  *
  * @package CowSay
  */
-class Tux extends Calf {
+class Tux extends \CowSay\Core\Calf {
 
     protected $carcass = '
      \

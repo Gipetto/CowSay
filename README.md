@@ -12,6 +12,12 @@ for command line use. You should install the original Cowsay for that.
 
 - PHP 5.4+
 
+## Install 
+
+```
+$ composer require Gipetto/CowSay
+```
+
 ## Quickstart
 
 ```php

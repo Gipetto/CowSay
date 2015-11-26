@@ -9,7 +9,7 @@ namespace CowSay;
  *
  * @package CowSay
  */
-class Cow extends Calf {
+class Cow extends \CowSay\Core\Calf {
 
 	use Traits\Eyes;
 	use Traits\Tongue;

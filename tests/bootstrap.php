@@ -5,4 +5,4 @@ ini_set('display_errors', 1);
 
 define('PACKAGE_ROOT', dirname(dirname(__FILE__)));
 
-require_once PACKAGE_ROOT . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . 'CowSay.php';
+require_once PACKAGE_ROOT . DIRECTORY_SEPARATOR . 'vendor/autoload.php';

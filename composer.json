@@ -18,12 +18,14 @@
         "php": ">=5.4.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "4.5.*"
+        "phpunit/phpunit": "~4.5.0"
     },
     "autoload": {
-        "files": [
-            "src/CowSay.php"
-        ]
+        "psr-4": {
+            "CowSay\\": "src/Carcases",
+            "CowSay\\Core\\": "src/Core",
+            "CowSay\\Traits\\": "src/Traits"
+        }
     },
     "support": {
         "issues": "https://github.com/Gipetto/CowSay/issues"

@@ -1,13 +1,13 @@
 <?php
 
-require 'src/CowSay.php';
+require_once 'vendor/autoload.php';
 
 $carcases = glob('src/Carcases/*.php');
 
 foreach ($carcases as $carcass) {
 	$class = '\\CowSay\\' . basename($carcass, '.php');
 
-	/** @var $obj Cowsay\Calf */
+	/** @var $obj Cowsay\Core\Calf */
 	$obj = new $class();
 
 	$message = 'How now brown ' . $class . '.' . PHP_EOL;

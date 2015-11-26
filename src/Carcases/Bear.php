@@ -2,14 +2,13 @@
 
 namespace CowSay;
 
-
 /**
  * Class Bear
  * I had to write this for the `Carcasses.md` demo, might as well include it.
  *
  * @package CowSay
  */
-class Bear extends \CowSay\Calf {
+class Bear extends \CowSay\Core\Calf {
 
 	/**
 	 * Include the Eyes Trait
