@@ -6,7 +6,7 @@ ifeq ($(strip $(COMPOSER)),)
 endif
 
 test-install:
-	$(COMPOSER) install
+	$(COMPOSER) install --dev
 
 test:
 	@PATH=vendor/bin:$(PATH) phpunit --coverage-clover clover.xml \
