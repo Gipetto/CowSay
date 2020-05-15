@@ -9,5 +9,11 @@ php:
     - 7.3
     - 7.4
     - nightly
+jobs:
+  include:
+    - php: 5.4
+      dist: trusty
+    - php: 5.5
+      dist: trusty
 script: "make test"
 before_install: "composer install --dev"
