@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace CowSay;
 
@@ -75,7 +76,7 @@ BEAR;
 	 *
 	 * @return string
 	 */
-	public function buildCarcass(): string {
+	protected function buildCarcass(): string {
 		return sprintf($this->carcass, $this->getEyes());
 	}
 }

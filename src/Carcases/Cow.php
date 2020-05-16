@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace CowSay;
 
@@ -29,7 +30,7 @@ class Cow extends \CowSay\Core\Calf {
 	/**
 	 * @return string
 	 */
-	public function buildCarcass(): string {
+	protected function buildCarcass(): string {
 		return sprintf($this->carcass, $this->getEyes(), $this->getTongue(), $this->getUdder(), $this->getPoop());
 	}
 }

@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace CowSay\Core;
 
@@ -26,8 +27,7 @@ abstract class Calf {
 	protected $message;
 
 	/**
-	 * @TODO: make int
-	 * @var string max length of output lines
+	 * @var int max length of output lines
 	 */
 	protected $maxLen;
 
@@ -40,7 +40,7 @@ abstract class Calf {
 	 * @param $message
 	 * @param int $maxLen
 	 */
-	public function __construct($message = '', $maxLen = self::DEFAULT_MAX_LEN) {
+	public function __construct($message = '', int $maxLen = self::DEFAULT_MAX_LEN) {
 		$this->setMessage($message);
 		$this->setMaxLen($maxLen);
 	}
@@ -59,23 +59,22 @@ abstract class Calf {
 	 *
 	 * @return string
 	 */
-	abstract public function buildCarcass(): string;
+	abstract protected function buildCarcass(): string;
 
 	/**
 	 * @param $maxLen
 	 * @returns $this;
 	 */
-	public function setMaxLen($maxLen): self {
-		$this->maxLen = intVal($maxLen);
+	protected function setMaxLen(int $maxLen) {
+		$this->maxLen = $maxLen;
 
 		return $this;
 	}
 
 	/**
-	 * @TODO return int
-	 * @return string
+	 * @return int
 	 */
-	public function getMaxLen(): string {
+	protected function getMaxLen(): int {
 		return $this->maxLen;
 	}
 
@@ -83,7 +82,7 @@ abstract class Calf {
 	 * @param $message
 	 * @returns $this
 	 */
-	public function setMessage($message): self {
+	public function setMessage(string $message) {
 		$this->message = $message;
 
 		return $this;
@@ -100,17 +99,16 @@ abstract class Calf {
 	 * @param $strLen
 	 * @return $this
 	 */
-	public function setStrLen($strLen): self {
+	protected function setStrLen(int $strLen) {
 		$this->strLen = intVal($strLen);
 
 		return $this;
 	}
 
 	/**
-	 * @TODO return int
-	 * @return string
+	 * @return int
 	 */
-	public function getStrLen(): string {
+	protected function getStrLen(): int {
 		return $this->strLen;
 	}
 
@@ -119,7 +117,7 @@ abstract class Calf {
 	 * @param $message
 	 * @return array
 	 */
-	protected function splitMessage($message): array {
+	protected function splitMessage(string $message): array {
 		return explode(PHP_EOL, wordwrap($message, $this->maxLen, PHP_EOL));
 	}
 
@@ -128,7 +126,7 @@ abstract class Calf {
 	 * @param $lines
 	 * @return $this
 	 */
-	protected function calcLineLength($lines): self {
+	protected function calcLineLength(array $lines) {
 		$strLen = 0;
 
 		foreach ($lines as $line) {

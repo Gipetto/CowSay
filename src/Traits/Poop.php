@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace CowSay\Traits;
 
@@ -14,7 +15,7 @@ trait Poop {
 	 * @param $poop
 	 * @return $this
 	 */
-	public function setPoop($poop): string {
+	public function setPoop(string $poop) {
 		$this->poop = $poop;
 		return $this;
 	}

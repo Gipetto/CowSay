@@ -9,7 +9,7 @@ class CowTest extends TestCase {
 	 * @param $expected
 	 * @param $message
 	 */
-	protected function assertCow($expected, $message) {
+	protected function assertCow(string $expected, string $message) {
 		$c = new Cow($message);
 		$this->assertEquals($expected, $c->say());
 	}

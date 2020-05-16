@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace CowSay\Traits;
 
@@ -15,7 +16,7 @@ trait Eyes {
 	 * @param $eyes
 	 * @return $this
 	 */
-	public function setEyes($eyes): self {
+	public function setEyes(string $eyes) {
 		if (strlen($eyes) == 1) {
 			$eyes .= $eyes;
 		}

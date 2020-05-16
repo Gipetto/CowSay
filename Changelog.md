@@ -4,9 +4,10 @@ See https://github.com/Gipetto/CowSay/releases for release dates.
 
 ## 1.1.0
 - No new features :(
-- General fixes
+- General cleanup
 - Deprecate support for PHP < 7.2
 - Introduce PHP 7.2 level type safety features
+    - Won't have the best support until 7.4 is the baseline
 
 ## 1.0.4
 - Fixed up PSR-4 class loading
