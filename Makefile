@@ -9,6 +9,8 @@ test-install:
 	$(COMPOSER) install --dev
 
 test:
-	vendor/bin/phpunit --coverage-clover clover.xml \
+	vendor/bin/phpunit -v\
+		--coverage-clover clover.xml \
+		--coverage-html coverage \
 		--colors \
 		--configuration tests/phpunit.xml;

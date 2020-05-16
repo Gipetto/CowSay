@@ -27,6 +27,18 @@ class CowTest extends TestCase {
 		$this->assertCow($expected, $message);
 	}
 
+	public function testToString() {
+		$message = 'I output a single line';
+		$c = new Cow($message);
+
+		ob_start();
+		echo($c);
+		$expected = ob_get_contents();
+		ob_end_clean();
+
+		$this->assertEquals($expected, $c->say());
+	}
+
 	public function testMultipleLineWrap() {
 		$message = 'I am text that will wrap to two lines because I am long.';
 		$expected = '  --------------------------------------------------
@@ -91,4 +103,20 @@ class CowTest extends TestCase {
 		$this->assertSame($expected, $c->say());
 	}
 
+	public function testEyesTruncation() {
+		$message = 'I output a single line';
+		$expected = '  ----------------------
+< I output a single line >
+  ----------------------
+          \   ^__^
+           \  (ee)\_______
+              (__)\       )\/\
+                  ||----w |
+                  ||     || ';
+
+		$c = new Cow($message);
+		$c->setEyes('eee');
+
+		$this->assertSame($expected, $c->say());
+	}
 }
