@@ -4,7 +4,8 @@ php:
     - 7.3
     - 7.4
     - nightly
-allow_failures:
-    - php: nightly
+jobs:
+    allow_failures:
+        - php: nightly
 script: "make test"
 before_install: "composer install"
