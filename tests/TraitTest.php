@@ -1,9 +1,10 @@
 <?php
 
+use \PHPUnit\Framework\TestCase;
 use \CowSay\Cow;
 use \CowSay\Tux;
 
-class TraitTest extends PHPUnit_Framework_TestCase {
+class TraitTest extends TestCase {
 
 	public function testCowSupportedTraits() {
 		$c = new Cow();

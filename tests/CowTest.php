@@ -1,8 +1,9 @@
 <?php
 
+use \PHPUnit\Framework\TestCase;
 use \CowSay\Cow;
 
-class CowTest extends PHPUnit_Framework_TestCase {
+class CowTest extends TestCase {
 
 	/**
 	 * @param $expected
