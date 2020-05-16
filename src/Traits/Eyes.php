@@ -15,7 +15,7 @@ trait Eyes {
 	 * @param $eyes
 	 * @return $this
 	 */
-	public function setEyes($eyes) {
+	public function setEyes($eyes): self {
 		if (strlen($eyes) == 1) {
 			$eyes .= $eyes;
 		}
@@ -28,7 +28,10 @@ trait Eyes {
 		return $this;
 	}
 
-	public function getEyes() {
+	/**
+	 * @return string
+	 */
+	public function getEyes(): string {
 		return $this->eyes;
 	}
 }

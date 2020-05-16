@@ -55,7 +55,7 @@ BEAR;
 	 * @param $eyes
 	 * @return $this
 	 */
-	public function setEyes($eyes) {
+	public function setEyes($eyes): self {
 		if (strlen($eyes) == 1) {
 			$eyes .= ' ' . $eyes;
 		}
@@ -75,7 +75,7 @@ BEAR;
 	 *
 	 * @return string
 	 */
-	public function buildCarcass() {
+	public function buildCarcass(): string {
 		return sprintf($this->carcass, $this->getEyes());
 	}
 }

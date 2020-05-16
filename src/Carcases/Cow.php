@@ -29,7 +29,7 @@ class Cow extends \CowSay\Core\Calf {
 	/**
 	 * @return string
 	 */
-	public function buildCarcass() {
+	public function buildCarcass(): string {
 		return sprintf($this->carcass, $this->getEyes(), $this->getTongue(), $this->getUdder(), $this->getPoop());
 	}
 }

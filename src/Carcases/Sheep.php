@@ -23,7 +23,7 @@ class Sheep extends \CowSay\Core\Calf {
 	/**
 	 * @return string
 	 */
-	public function buildCarcass() {
+	public function buildCarcass(): string {
 		return $this->carcass;
 	}
 

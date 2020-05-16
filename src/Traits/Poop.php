@@ -8,13 +8,13 @@ trait Poop {
 	/**
 	 * @var string
 	 */
-	protected $poop;
+	protected $poop = '';
 
 	/**
 	 * @param $poop
 	 * @return $this
 	 */
-	public function setPoop($poop) {
+	public function setPoop($poop): string {
 		$this->poop = $poop;
 		return $this;
 	}
@@ -22,7 +22,7 @@ trait Poop {
 	/**
 	 * @return string
 	 */
-	public function getPoop() {
+	public function getPoop(): string {
 		return $this->poop;
 	}
 }

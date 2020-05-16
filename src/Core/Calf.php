@@ -26,6 +26,7 @@ abstract class Calf {
 	protected $message;
 
 	/**
+	 * @TODO: make int
 	 * @var string max length of output lines
 	 */
 	protected $maxLen;
@@ -49,7 +50,7 @@ abstract class Calf {
 	 *
 	 * @return string
 	 */
-	public function say() {
+	public function say(): string {
 		return $this->formatMessage() . $this->buildCarcass();
 	}
 
@@ -58,22 +59,23 @@ abstract class Calf {
 	 *
 	 * @return string
 	 */
-	abstract public function buildCarcass();
+	abstract public function buildCarcass(): string;
 
 	/**
 	 * @param $maxLen
 	 * @returns $this;
 	 */
-	public function setMaxLen($maxLen) {
+	public function setMaxLen($maxLen): self {
 		$this->maxLen = intVal($maxLen);
 
 		return $this;
 	}
 
 	/**
+	 * @TODO return int
 	 * @return string
 	 */
-	public function getMaxLen() {
+	public function getMaxLen(): string {
 		return $this->maxLen;
 	}
 
@@ -81,7 +83,7 @@ abstract class Calf {
 	 * @param $message
 	 * @returns $this
 	 */
-	public function setMessage($message) {
+	public function setMessage($message): self {
 		$this->message = $message;
 
 		return $this;
@@ -90,7 +92,7 @@ abstract class Calf {
 	/**
 	 * @return string
 	 */
-	public function getMessage() {
+	public function getMessage(): string {
 		return $this->message;
 	}
 
@@ -98,16 +100,17 @@ abstract class Calf {
 	 * @param $strLen
 	 * @return $this
 	 */
-	public function setStrLen($strLen) {
+	public function setStrLen($strLen): self {
 		$this->strLen = intVal($strLen);
 
 		return $this;
 	}
 
 	/**
+	 * @TODO return int
 	 * @return string
 	 */
-	public function getStrLen() {
+	public function getStrLen(): string {
 		return $this->strLen;
 	}
 
@@ -116,7 +119,7 @@ abstract class Calf {
 	 * @param $message
 	 * @return array
 	 */
-	protected function splitMessage($message) {
+	protected function splitMessage($message): array {
 		return explode(PHP_EOL, wordwrap($message, $this->maxLen, PHP_EOL));
 	}
 
@@ -125,7 +128,7 @@ abstract class Calf {
 	 * @param $lines
 	 * @return $this
 	 */
-	protected function calcLineLength($lines) {
+	protected function calcLineLength($lines): self {
 		$strLen = 0;
 
 		foreach ($lines as $line) {
@@ -139,7 +142,7 @@ abstract class Calf {
 	 * Make a border string based on the computer CowSay::$strLen
 	 * @return string
 	 */
-	protected function mkBorder() {
+	protected function mkBorder(): string {
 		return '  ' . str_repeat('-', $this->getStrLen());
 	}
 
@@ -147,7 +150,7 @@ abstract class Calf {
 	 * Format the message for output
 	 * @return string
 	 */
-	protected function formatMessage() {
+	protected function formatMessage(): string {
 		$output = [];
 
 		$lines = $this->splitMessage($this->getMessage());
@@ -186,7 +189,7 @@ abstract class Calf {
 	/**
 	 * @return string
 	 */
-	public function __toString() {
+	public function __toString():string {
 		return $this->say();
 	}
 
@@ -194,7 +197,7 @@ abstract class Calf {
 	 * Return a list of traits supported by the carcass
 	 * @return array
 	 */
-	public function getSupportedTraits() {
+	public function getSupportedTraits(): array {
 		$traits = class_uses(get_called_class());
 
 		$parents = class_parents($this);

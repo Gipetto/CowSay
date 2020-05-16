@@ -14,7 +14,7 @@ trait Udder {
 	 * @param $udder
 	 * @returns $this
 	 */
-	public function setUdder($udder) {
+	public function setUdder($udder): self {
 		$this->udder = $udder;
 		return $this;
 	}
@@ -22,7 +22,7 @@ trait Udder {
 	/**
 	 * @return string
 	 */
-	public function getUdder() {
+	public function getUdder(): string {
 		return $this->udder;
 	}
 }
