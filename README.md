@@ -10,7 +10,7 @@ for command line use. You should install the original Cowsay for that.
 
 ## Requirements
 
-- PHP 5.4+
+- PHP 7.2+
 
 ## Install 
 

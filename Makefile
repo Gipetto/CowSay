@@ -6,9 +6,11 @@ ifeq ($(strip $(COMPOSER)),)
 endif
 
 test-install:
-	$(COMPOSER) install
+	$(COMPOSER) install --dev
 
 test:
-	@PATH=vendor/bin:$(PATH) phpunit --coverage-clover clover.xml \
+	vendor/bin/phpunit -v\
+		--coverage-clover clover.xml \
+		--coverage-html coverage \
 		--colors \
 		--configuration tests/phpunit.xml;

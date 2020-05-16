@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace CowSay\Traits;
 
@@ -14,7 +15,7 @@ trait Udder {
 	 * @param $udder
 	 * @returns $this
 	 */
-	public function setUdder($udder) {
+	public function setUdder(string $udder) {
 		$this->udder = $udder;
 		return $this;
 	}
@@ -22,7 +23,7 @@ trait Udder {
 	/**
 	 * @return string
 	 */
-	public function getUdder() {
+	public function getUdder(): string {
 		return $this->udder;
 	}
 }

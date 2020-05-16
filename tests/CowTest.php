@@ -1,14 +1,15 @@
 <?php
 
+use \PHPUnit\Framework\TestCase;
 use \CowSay\Cow;
 
-class CowTest extends PHPUnit_Framework_TestCase {
+class CowTest extends TestCase {
 
 	/**
 	 * @param $expected
 	 * @param $message
 	 */
-	protected function assertCow($expected, $message) {
+	protected function assertCow(string $expected, string $message) {
 		$c = new Cow($message);
 		$this->assertEquals($expected, $c->say());
 	}
@@ -24,6 +25,18 @@ class CowTest extends PHPUnit_Framework_TestCase {
                   ||----w |
                   ||     || ';
 		$this->assertCow($expected, $message);
+	}
+
+	public function testToString() {
+		$message = 'I output a single line';
+		$c = new Cow($message);
+
+		ob_start();
+		echo($c);
+		$expected = ob_get_contents();
+		ob_end_clean();
+
+		$this->assertEquals($expected, $c->say());
 	}
 
 	public function testMultipleLineWrap() {
@@ -90,4 +103,20 @@ class CowTest extends PHPUnit_Framework_TestCase {
 		$this->assertSame($expected, $c->say());
 	}
 
+	public function testEyesTruncation() {
+		$message = 'I output a single line';
+		$expected = '  ----------------------
+< I output a single line >
+  ----------------------
+          \   ^__^
+           \  (ee)\_______
+              (__)\       )\/\
+                  ||----w |
+                  ||     || ';
+
+		$c = new Cow($message);
+		$c->setEyes('eee');
+
+		$this->assertSame($expected, $c->say());
+	}
 }

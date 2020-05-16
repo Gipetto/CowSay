@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace CowSay;
 
@@ -24,7 +25,7 @@ class Tux extends \CowSay\Core\Calf {
 	/**
 	 * @return string
 	 */
-	public function buildCarcass() {
+	protected function buildCarcass(): string {
 		return $this->carcass;
 	}
 

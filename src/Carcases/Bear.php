@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace CowSay;
 
@@ -55,7 +56,7 @@ BEAR;
 	 * @param $eyes
 	 * @return $this
 	 */
-	public function setEyes($eyes) {
+	public function setEyes($eyes): self {
 		if (strlen($eyes) == 1) {
 			$eyes .= ' ' . $eyes;
 		}
@@ -75,7 +76,7 @@ BEAR;
 	 *
 	 * @return string
 	 */
-	public function buildCarcass() {
+	protected function buildCarcass(): string {
 		return sprintf($this->carcass, $this->getEyes());
 	}
 }

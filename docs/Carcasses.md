@@ -23,7 +23,7 @@ class Bear extends \CowSay\Core\Calf {
       (___,'.___)
 BEAR;
 	
-	public function buildCarcass() {
+	protected function buildCarcass(): string {
 		return $this->carcass;
 	}
 	
@@ -106,7 +106,7 @@ BEAR;
 		return $this;
 	}
 
-	public function buildCarcass() {
+	protected function buildCarcass(): string {
 		return sprintf($this->carcass, $this->getEyes());
 	}
 }
