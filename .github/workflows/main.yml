@@ -10,13 +10,14 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
+  test-legacy:
     runs-on: ${{ matrix.operating-system }}
     strategy:
       matrix:
-        operating-system: ["ubuntu-latest"]
-        php-versions: ["7.4", "8.0"]
+        operating-system: ["ubuntu-18.04"]
+        php-versions: ["7.2","7.3"]
         php-unit-versions: ["latest"]
+    name: LEGACY PHP ${{ matrix.php-versions }} test on ${{ matrix.operating-system }}
     steps:
       - uses: actions/checkout@v2
       - name: Setup PHP
@@ -26,5 +27,24 @@ jobs:
           tools: phpunit:${{ matrix.phpunit-versions }}
       - name: Composer Install
         run: composer install
-      - name: Run a multi-line script
+      - name: Run Tests
+        run: make test
+  test:
+    runs-on: ${{ matrix.operating-system }}
+    strategy:
+      matrix:
+        operating-system: ["ubuntu-latest"]
+        php-versions: ["7.4", "8.0"]
+        php-unit-versions: ["latest"]
+    name: CURRENT PHP ${{ matrix.php-versions }} test on ${{ matrix.operating-system }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-versions }}
+          tools: phpunit:${{ matrix.phpunit-versions }}
+      - name: Composer Install
+        run: composer install
+      - name: Run Tests
         run: make test
