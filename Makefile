@@ -6,7 +6,7 @@ ifeq ($(strip $(COMPOSER)),)
 endif
 
 PHPUNIT = $(shell which phpunit)
-ifeq($(strip $(PHPUNIT)),)
+ifeq ($(strip $(PHPUNIT)),)
 	PHPUNIT = vendor/bin/phpunit
 endif
 
