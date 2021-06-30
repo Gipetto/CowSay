@@ -5,11 +5,16 @@ ifeq ($(strip $(COMPOSER)),)
 	COMPOSER = php composer.phar
 endif
 
+PHPUNIT = $(shell which phpunit)
+ifeq($(strip $(PHPUNIT)),)
+	PHPUNIT = vendor/bin/phpunit
+endif
+
 test-install:
 	$(COMPOSER) install --dev
 
 test:
-	vendor/bin/phpunit -v\
+	$(PHPUNIT) -v\
 		--coverage-clover clover.xml \
 		--coverage-html coverage \
 		--colors \
