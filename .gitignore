@@ -1,6 +1,7 @@
 composer.phar
 .DS_Store
 .idea
+shell.nix
 nbproject
 vendor
 clover.xml
