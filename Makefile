@@ -10,12 +10,17 @@ ifeq ($(strip $(PHPUNIT)),)
 	PHPUNIT = vendor/bin/phpunit
 endif
 
+PHPUNIT_CONFIG = tests/phpunit.xml
+ifeq ($(LEGACY), true)
+	PHPUNIT_CONFIG = tests/phpunit-legacy.xml
+endif
+
 test-install:
 	$(COMPOSER) install --dev
 
 test:
-	$(PHPUNIT) -v\
+	$(PHPUNIT) -v \
 		--coverage-clover clover.xml \
 		--coverage-html coverage \
 		--colors \
-		--configuration tests/phpunit.xml;
+		--configuration $(PHPUNIT_CONFIG);

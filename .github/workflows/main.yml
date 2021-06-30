@@ -18,6 +18,8 @@ jobs:
         php-versions: ["7.2","7.3"]
         phpunit-versions: ["8.5.17"]
     name: LEGACY PHP ${{ matrix.php-versions }} test on ${{ matrix.operating-system }}
+    env:
+      LEGACY: true
     steps:
       - uses: actions/checkout@v2
       - name: Setup PHP
