@@ -31,6 +31,8 @@ jobs:
         run: composer install --no-dev
       - name: Run Tests
         run: make test
+      - name: Run demo file
+        run: php demo.php
   test:
     runs-on: ${{ matrix.operating-system }}
     strategy:
@@ -71,6 +73,8 @@ jobs:
         with:
           name: clover-coverage
           path: coverage
+      - name: Run demo file
+        run: php demo.php
   # Final step to wrap up a singular protected branch action
   test-all-required:
     runs-on: ubuntu-latest
