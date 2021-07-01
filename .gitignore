@@ -5,6 +5,5 @@ shell.nix
 nbproject
 vendor
 clover.xml
-composer.lock
 .phpunit.result.cache
 coverage
