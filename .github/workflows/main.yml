@@ -43,6 +43,8 @@ jobs:
           - php-versions: "8.1"
             operating-system: "ubuntu-latest"
             unstable: true
+    env:
+      COVERAGE_VERSION: "8.0"
     continue-on-error: ${{ matrix.unstable }}
     name: CURRENT PHP ${{ matrix.php-versions }} test on ${{ matrix.operating-system }}
     steps:
@@ -56,6 +58,19 @@ jobs:
         run: composer install --no-dev
       - name: Run Tests
         run: make test
+      - name: Check test coverage
+        id: test-coverage
+        if: ${{ matrix.php-versions == env.COVERAGE_VERSION }}
+        uses: johanvanhelden/gha-clover-test-coverage-check@v1
+        with:
+          percentage: "98"
+          filename: "clover.xml"
+      - name: Upload Coverage on Failure
+        if: failure() && ${{ matrix.php-versions == env.COVERAGE_VERSION }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: clover-coverage
+          path: coverage
   # Final step to wrap up a singular protected branch action
   test-all-required:
     runs-on: ubuntu-latest
