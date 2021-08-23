@@ -5,8 +5,7 @@
 [![Build Status](https://github.com/Gipetto/CowSay/actions/workflows/main.yml/badge.svg)](https://github.com/Gipetto/CowSay/actions/workflows/main.yml)
 ![Moo, Cow](https://img.shields.io/badge/Moo-Cow-orange.svg)
 
-An extensible PHP port of the [Linux Cowsay](http://en.wikipedia.org/wiki/Cowsay) utility. This library is not designed
-for command line use. You should install the original Cowsay for that.
+An extensible PHP port of the [Linux Cowsay](http://en.wikipedia.org/wiki/Cowsay) utility.
 
 ## Requirements
 
@@ -21,7 +20,15 @@ $ composer require Gipetto/CowSay
 ## Quickstart
 
 ```php
+use CowSay\Cow;
+
 $bessie = new Cow('Hello, Farm!');
+
+// store the output in a variable
+$output = $bessie->say();
+echo $output;
+
+// or just echo the object for direct output
 echo $bessie;
 ```
 
@@ -73,4 +80,4 @@ information.
 
 ## License
 
-CowSay is licenced under [The MIT License (MIT)](LICENSE.txt).
+CowSay is licensed under [The MIT License (MIT)](LICENSE.txt).
