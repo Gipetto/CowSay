@@ -130,7 +130,7 @@ abstract class Calf {
 		$strLen = 0;
 
 		foreach ($lines as $line) {
-			$strLen = max($strLen, min($this->getMaxLen(), strlen(utf8_decode($line))));
+			$strLen = max($strLen, min($this->getMaxLen(), mb_strlen(mb_convert_encoding($line, "UTF-8"))));
 		}
 
 		return $this->setStrLen($strLen);
@@ -163,7 +163,7 @@ abstract class Calf {
 
 			foreach ($lines as $key => $value) {
 				# can't trust str_pad with utf8 string lengths
-				$padding = $this->getStrLen() - mb_strlen(utf8_decode($value));
+				$padding = $this->getStrLen() - mb_strlen(mb_convert_encoding($value, "UTF-8"));
 				$value .= str_repeat(' ', $padding);
 
 				switch ($key) {
