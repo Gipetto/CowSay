@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace CowSay\Core;
 use Symfony\Component\String\UnicodeString;
-use Symfony\Component\String\ByteString;
 
 /**
  * Class Calf
@@ -84,9 +83,7 @@ abstract class Calf {
 	 * @returns $this
 	 */
 	public function setMessage(string $message): self {
-		// $this->message = new UnicodeString($message);
-		$this->message = (new ByteString($message))->toUnicodeString("UTF8");
-
+		$this->message = new UnicodeString($message);
 		return $this;
 	}
 
