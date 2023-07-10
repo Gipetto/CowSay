@@ -9,7 +9,7 @@ An extensible PHP port of the [Linux Cowsay](http://en.wikipedia.org/wiki/Cowsay
 
 ## Requirements
 
-- PHP 7.2+
+- PHP 7.4+
 
 ## Install 
 

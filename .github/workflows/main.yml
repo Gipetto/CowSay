@@ -14,8 +14,8 @@ jobs:
     runs-on: ${{ matrix.operating-system }}
     strategy:
       matrix:
-        operating-system: ["ubuntu-18.04"]
-        php-versions: ["7.2","7.3"]
+        operating-system: ["ubuntu-20.04"]
+        php-versions: ["7.4"]
         phpunit-versions: ["8.5.17"]
     name: LEGACY PHP ${{ matrix.php-versions }} test on ${{ matrix.operating-system }}
     env:
@@ -38,7 +38,7 @@ jobs:
     strategy:
       matrix:
         operating-system: ["ubuntu-latest"]
-        php-versions: ["7.4", "8.0", "8.1"]
+        php-versions: ["8.0", "8.1"]
         phpunit-versions: ["latest"]
         unstable: [false]
         include:
