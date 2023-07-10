@@ -5,19 +5,19 @@ use \PHPUnit\Framework\TestCase;
 
 class CarcasTest extends TestCase {
 
-    protected $carcases = [];
+    protected static $carcases = [];
     
     public function __construct($name = null, array $data = [], $dataName = '') {
         parent::__construct($name, $data, $dataName);
 
         $files = glob('src/Carcases/*.php');
         foreach ($files as $file) {
-            $this->carcases[] = ['\\CowSay\\' . basename($file, '.php')];
+            static::$carcases[] = ['\\CowSay\\' . basename($file, '.php')];
         }
     }
 
-    public function carcasClassProvider() {
-        return $this->carcases;
+    public static function carcasClassProvider() {
+        return static::$carcases;
     }
 
     /**
@@ -54,7 +54,7 @@ class CarcasTest extends TestCase {
         }
     }
 
-    public function bearEyesDataProvider() {
+    public static function bearEyesDataProvider() {
         return [
             ['e', 'e e'],
             ['e e', 'e e'],
