@@ -9,7 +9,10 @@ An extensible PHP port of the [Linux Cowsay](http://en.wikipedia.org/wiki/Cowsay
 
 ## Requirements
 
-- PHP 7.2+
+- Minimum: PHP 7.4+
+- Recommended: PHP 8.1+
+
+Official PHP supported versions: https://www.php.net/supported-versions.php
 
 ## Install 
 
@@ -77,6 +80,10 @@ Displays:
 
 CowSay is easily extended to add new carcases for your custom needs. See the [Carcasses](docs/Carcasses.md) tutorial for more
 information.
+
+## Known Issues
+
+- Line length calculations are not fully understood for strings with longer byte length characters. ie: Chinese.
 
 ## License
 

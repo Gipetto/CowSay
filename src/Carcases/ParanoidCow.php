@@ -14,6 +14,6 @@ use CowSay\Cow;
  */
 class ParanoidCow extends Cow {
 
-	protected $eyes = '@@';
+	protected string $eyes = '@@';
 
 }

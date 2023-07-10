@@ -14,6 +14,6 @@ use CowSay\Cow;
  */
 class GreedyCow extends Cow {
 
-	protected $eyes = '$$';
+	protected string $eyes = '$$';
 
 }

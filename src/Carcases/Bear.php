@@ -20,7 +20,7 @@ class Bear extends \CowSay\Core\Calf {
 	 * Our carcass string with sprintf string placeholder for the eyes
 	 * @var string
 	 */
-	protected $carcass = <<<BEAR
+	protected string $carcass = <<<BEAR
 
      \
       \ _     _

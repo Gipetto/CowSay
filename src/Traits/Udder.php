@@ -9,13 +9,13 @@ trait Udder {
 	/**
 	 * @var string
 	 */
-	protected $udder = 'w';
+	protected string $udder = 'w';
 
 	/**
 	 * @param $udder
 	 * @returns $this
 	 */
-	public function setUdder(string $udder) {
+	public function setUdder(string $udder): self {
 		$this->udder = $udder;
 		return $this;
 	}
