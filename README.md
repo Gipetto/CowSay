@@ -1,6 +1,6 @@
 # PHP CowSay
 
-[![Release Version](https://img.shields.io/github/release/Gipetto/CowSay.svg)](/Gipetto/CowSay/releases)
+[![Release Version](https://img.shields.io/github/release/Gipetto/CowSay.svg)](https://github.com/Gipetto/CowSay/releases)
 [![Packagist Version](https://img.shields.io/packagist/v/Gipetto/CowSay.svg)](https://packagist.org/packages/gipetto/cowsay)
 [![Build Status](https://github.com/Gipetto/CowSay/actions/workflows/main.yml/badge.svg)](https://github.com/Gipetto/CowSay/actions/workflows/main.yml)
 ![Moo, Cow](https://img.shields.io/badge/Moo-Cow-orange.svg)
