@@ -3,21 +3,16 @@
 use \PHPUnit\Framework\TestCase;
 
 
-class CarcasTest extends TestCase {
-
-    protected static $carcases = [];
-    
-    public function __construct($name = null, array $data = [], $dataName = '') {
-        parent::__construct($name, $data, $dataName);
+class CarcasTest extends TestCase {    
+    public static function carcasClassProvider() {
+        $carcases = [];
 
         $files = glob('src/Carcases/*.php');
         foreach ($files as $file) {
-            static::$carcases[] = ['\\CowSay\\' . basename($file, '.php')];
+            $carcases[] = ['\\CowSay\\' . basename($file, '.php')];
         }
-    }
 
-    public static function carcasClassProvider() {
-        return static::$carcases;
+        return $carcases;
     }
 
     /**
