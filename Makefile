@@ -19,7 +19,7 @@ test-install:
 	$(COMPOSER) install --dev
 
 test:
-	$(PHPUNIT) -v \
+	$(PHPUNIT) \
 		--coverage-clover clover.xml \
 		--coverage-html coverage \
 		--colors \
