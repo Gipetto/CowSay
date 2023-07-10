@@ -15,7 +15,7 @@ trait Poop {
 	 * @param $poop
 	 * @return $this
 	 */
-	public function setPoop(string $poop): static {
+	public function setPoop(string $poop): self {
 		$this->poop = $poop;
 		return $this;
 	}

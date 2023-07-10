@@ -15,7 +15,7 @@ trait Tongue {
 	 * @param $tongue
 	 * @return $this
 	 */
-	public function setTongue(string $tongue = 'U'): static {
+	public function setTongue(string $tongue = 'U'): self {
 		$this->tongue = strlen($tongue) ? $tongue[0] : ' ';
 		return $this;
 	}

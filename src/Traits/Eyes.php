@@ -16,7 +16,7 @@ trait Eyes {
 	 * @param $eyes
 	 * @return $this
 	 */
-	public function setEyes(string $eyes): static {
+	public function setEyes(string $eyes): self {
 		if (strlen($eyes) == 1) {
 			$eyes .= $eyes;
 		}
