@@ -20,7 +20,7 @@ class Cow extends \CowSay\Core\Calf {
 	/**
 	 * @var string cow!
 	 */
-	protected $carcass = '
+	protected string $carcass = '
           \   ^__^
            \  (%s)\_______
               (__)\       )\/\\

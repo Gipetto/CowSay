@@ -78,6 +78,10 @@ Displays:
 CowSay is easily extended to add new carcases for your custom needs. See the [Carcasses](docs/Carcasses.md) tutorial for more
 information.
 
+## Known Issues
+
+- Line length calculations are not fully understood for strings with longer byte length characters. ie: Chinese.
+
 ## License
 
 CowSay is licensed under [The MIT License (MIT)](LICENSE.txt).

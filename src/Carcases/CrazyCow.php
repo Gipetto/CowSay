@@ -14,7 +14,7 @@ use CowSay\Cow;
  */
 class CrazyCow extends Cow {
 
-	protected $eyes = 'oO';
-	protected $tongue = 'U';
+	protected string $eyes = 'oO';
+	protected string $tongue = 'U';
 
 }

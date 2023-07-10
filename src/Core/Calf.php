@@ -2,7 +2,8 @@
 declare(strict_types=1);
 
 namespace CowSay\Core;
-
+use Symfony\Component\String\UnicodeString;
+use Symfony\Component\String\ByteString;
 
 /**
  * Class Calf
@@ -19,22 +20,22 @@ abstract class Calf {
 	/**
 	 * @var string carcass!
 	 */
-	protected $carcass;
+	protected string $carcass;
 
 	/**
-	 * @var string message to display
+	 * @var UnicodeString message to display
 	 */
-	protected $message;
+	protected UnicodeString $message;
 
 	/**
 	 * @var int max length of output lines
 	 */
-	protected $maxLen;
+	protected int $maxLen;
 
 	/**
-	 * @var string longest length of output lines found
+	 * @var int longest length of output lines found
 	 */
-	protected $strLen = 0;
+	protected int $strLen = 0;
 
 	/**
 	 * @param $message
@@ -65,7 +66,7 @@ abstract class Calf {
 	 * @param $maxLen
 	 * @returns $this;
 	 */
-	protected function setMaxLen(int $maxLen) {
+	protected function setMaxLen(int $maxLen): self {
 		$this->maxLen = $maxLen;
 
 		return $this;
@@ -82,16 +83,17 @@ abstract class Calf {
 	 * @param $message
 	 * @returns $this
 	 */
-	public function setMessage(string $message) {
-		$this->message = $message;
+	public function setMessage(string $message): self {
+		// $this->message = new UnicodeString($message);
+		$this->message = (new ByteString($message))->toUnicodeString("UTF8");
 
 		return $this;
 	}
 
 	/**
-	 * @return string
+	 * @return UnicodeString
 	 */
-	public function getMessage(): string {
+	public function getMessage(): UnicodeString {
 		return $this->message;
 	}
 
@@ -99,7 +101,7 @@ abstract class Calf {
 	 * @param $strLen
 	 * @return $this
 	 */
-	protected function setStrLen(int $strLen) {
+	protected function setStrLen(int $strLen): self {
 		$this->strLen = intVal($strLen);
 
 		return $this;
@@ -114,11 +116,11 @@ abstract class Calf {
 
 	/**
 	 * Split the message in to lines based on our CowSay::$maxLen
-	 * @param $message
+	 * @param UnicodeString $message
 	 * @return array
 	 */
-	protected function splitMessage(string $message): array {
-		return explode(PHP_EOL, wordwrap($message, $this->maxLen, PHP_EOL));
+	protected function splitMessage(UnicodeString $message): array {
+		return $message->wordwrap($this->maxLen, PHP_EOL)->split(PHP_EOL);
 	}
 
 	/**
@@ -126,18 +128,21 @@ abstract class Calf {
 	 * @param $lines
 	 * @return $this
 	 */
-	protected function calcLineLength(array $lines) {
+	protected function calcLineLength(array $lines): self {
 		$strLen = 0;
 
 		foreach ($lines as $line) {
-			$strLen = max($strLen, min($this->getMaxLen(), mb_strlen(mb_convert_encoding($line, "UTF-8"))));
+			$strLen = max(
+				$strLen, 
+				$line->width() > $this->getMaxLen() ? $line->width() : min($this->getMaxLen(), $line->width())
+			);
 		}
 
 		return $this->setStrLen($strLen);
 	}
 
 	/**
-	 * Make a border string based on the computer CowSay::$strLen
+	 * Make a border string based on the computed CowSay::$strLen
 	 * @return string
 	 */
 	protected function mkBorder(): string {
@@ -162,9 +167,11 @@ abstract class Calf {
 			reset($lines);
 
 			foreach ($lines as $key => $value) {
-				# can't trust str_pad with utf8 string lengths
-				$padding = $this->getStrLen() - mb_strlen(mb_convert_encoding($value, "UTF-8"));
-				$value .= str_repeat(' ', $padding);
+				$padding = $this->getStrLen() - $value->width();
+
+				if ($padding >= 0) {
+					$value .= str_repeat(' ', $padding);
+				}
 
 				switch ($key) {
 					case 0;
@@ -203,9 +210,10 @@ abstract class Calf {
 			$traits = array_merge($traits, class_uses($parentClass));
 		}
 
-		$traits = array_map(function ($trait) {
-			return str_replace('CowSay\\Traits\\', '', $trait);
-		}, $traits);
+		$traits = array_map(
+			fn ($trait) => str_replace('CowSay\\Traits\\', '', $trait), 
+			$traits
+		);
 
 		return $traits;
 	}

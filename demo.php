@@ -27,3 +27,10 @@ foreach ($carcases as $carcass) {
 	echo $obj . PHP_EOL . PHP_EOL;
 	unset($obj);
 }
+// Demo multibyte string
+
+echo PHP_EOL . PHP_EOL . "### Note:" . PHP_EOL;
+echo "Strings > UTF8 in byte length have line length calculation issues, but shouldn't break..." . PHP_EOL;
+$obj = new CowSay\Cow("", 10);
+$obj->setMessage("UTF8 will truncate to 10 chars. Other byte lengths won't. 现在怎么棕色的牛。这不是多字节字符串的精彩演示吗？ 现在怎么棕色的牛。这不是多字节字符串的精彩演示吗？ 现在怎么棕色的牛。这不是多字节字符串的精彩演示吗？");
+echo $obj . PHP_EOL . PHP_EOL;

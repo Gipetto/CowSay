@@ -9,13 +9,13 @@ trait Tongue {
 	/**
 	 * @var string
 	 */
-	protected $tongue = ' ';
+	protected string $tongue = ' ';
 
 	/**
 	 * @param $tongue
 	 * @return $this
 	 */
-	public function setTongue(string $tongue = 'U') {
+	public function setTongue(string $tongue = 'U'): static {
 		$this->tongue = strlen($tongue) ? $tongue[0] : ' ';
 		return $this;
 	}

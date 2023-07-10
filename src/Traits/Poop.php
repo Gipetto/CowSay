@@ -9,13 +9,13 @@ trait Poop {
 	/**
 	 * @var string
 	 */
-	protected $poop = '';
+	protected string $poop = '';
 
 	/**
 	 * @param $poop
 	 * @return $this
 	 */
-	public function setPoop(string $poop) {
+	public function setPoop(string $poop): static {
 		$this->poop = $poop;
 		return $this;
 	}

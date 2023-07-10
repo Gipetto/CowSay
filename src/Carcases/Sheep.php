@@ -11,7 +11,7 @@ namespace CowSay;
  */
 class Sheep extends \CowSay\Core\Calf {
 
-	protected $carcass = '
+	protected string $carcass = '
     \
      \
        __

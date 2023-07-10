@@ -9,14 +9,14 @@ trait Eyes {
 	/**
 	 * @var string
 	 */
-	protected $eyes = 'oo';
+	protected string $eyes = 'oo';
 
 	/**
 	 * Set the eyes. Make sure we have 2.
 	 * @param $eyes
 	 * @return $this
 	 */
-	public function setEyes(string $eyes) {
+	public function setEyes(string $eyes): static {
 		if (strlen($eyes) == 1) {
 			$eyes .= $eyes;
 		}

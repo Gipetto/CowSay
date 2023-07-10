@@ -19,8 +19,12 @@ test-install:
 	$(COMPOSER) install --dev
 
 test:
+	XDEBUG_MODE=coverage \
 	$(PHPUNIT) \
 		--coverage-clover clover.xml \
 		--coverage-html coverage \
 		--colors \
 		--configuration $(PHPUNIT_CONFIG);
+
+demo:
+	php demo.php
