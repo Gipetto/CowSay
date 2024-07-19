@@ -55,8 +55,9 @@ abstract class Calf implements \Stringable {
 	}
 
 	/**
-	 * Return the cow template with eyes & tongue replaces
-	 *
+	 * Build the output
+	 * 
+	 * @see Cowsay\Cow for an example
 	 * @return string
 	 */
 	abstract protected function buildCarcass(): string;

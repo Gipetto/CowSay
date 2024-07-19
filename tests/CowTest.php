@@ -119,4 +119,17 @@ class CowTest extends TestCase {
 
 		$this->assertSame($expected, $c->say());
 	}
+
+	public function testEmptyInput() {
+		$message = '';
+		$expected = '  
+<  >
+  
+          \   ^__^
+           \  (oo)\_______
+              (__)\       )\/\
+                  ||----w |
+                  ||     || ';
+		$this->assertCow($expected, $message);
+	}
 }
