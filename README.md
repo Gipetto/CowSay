@@ -9,8 +9,8 @@ An extensible PHP port of the [Linux Cowsay](http://en.wikipedia.org/wiki/Cowsay
 
 ## Requirements
 
-- Minimum: PHP 7.4+
-- Recommended: PHP 8.1+
+- Minimum: PHP 8.0+
+- Recommended: PHP 8.2+
 
 Official PHP supported versions: https://www.php.net/supported-versions.php
 
@@ -76,10 +76,16 @@ Displays:
                   ||     || @@@
 ```
 
-## Adding new Carcases
+## Extending CowSay
+
+### Adding New Carcases
 
 CowSay is easily extended to add new carcases for your custom needs. See the [Carcasses](docs/Carcasses.md) tutorial for more
 information.
+
+### Adding New Traits
+
+It is easy to add new Traits to CowSay. See the [Custom Traits](docs/CustomTraits.md) documentation for more information.
 
 ## Known Issues
 

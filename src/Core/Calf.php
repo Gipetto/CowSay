@@ -2,6 +2,8 @@
 declare(strict_types=1);
 
 namespace CowSay\Core;
+
+use Stringable;
 use ReflectionObject;
 use Symfony\Component\String\UnicodeString;
 
@@ -13,7 +15,7 @@ use Symfony\Component\String\UnicodeString;
  * @method $this getTongue
  * @method $this getUdder
  */
-abstract class Calf implements \Stringable {
+abstract class Calf implements Stringable {
 
 	const DEFAULT_MAX_LEN = 50;
 
