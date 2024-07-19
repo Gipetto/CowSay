@@ -1,6 +1,8 @@
 <?php
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use \PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 
 class CarcasTest extends TestCase {    
@@ -15,9 +17,12 @@ class CarcasTest extends TestCase {
         return $carcases;
     }
 
+
     /**
      * @dataProvider carcasClassProvider
      */
+	#[Test]
+	#[DataProvider('carcasClassProvider')]
     public function testAllCarcases($className) {
         $expected = '  -----------------
 < This is a carcass >
@@ -61,6 +66,8 @@ class CarcasTest extends TestCase {
     /**
      * @dataProvider bearEyesDataProvider
      */
+	#[Test]
+	#[DataProvider('bearEyesDataProvider')]
     public function testBearEyes($param, $expected) {
         $b = new \CowSay\Bear();
         $b->setEyes($param);

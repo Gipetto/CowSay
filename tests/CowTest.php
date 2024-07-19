@@ -1,6 +1,7 @@
 <?php
 
 use \PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 use \CowSay\Cow;
 
 class CowTest extends TestCase {
@@ -14,6 +15,7 @@ class CowTest extends TestCase {
 		$this->assertEquals($expected, $c->say());
 	}
 
+	#[Test]
 	public function testSingleLine() {
 		$message = 'I output a single line';
 		$expected = '  ----------------------
@@ -27,6 +29,7 @@ class CowTest extends TestCase {
 		$this->assertCow($expected, $message);
 	}
 
+	#[Test]
 	public function testToString() {
 		$message = 'I output a single line';
 		$c = new Cow($message);
@@ -39,6 +42,7 @@ class CowTest extends TestCase {
 		$this->assertEquals($expected, $c->say());
 	}
 
+	#[Test]
 	public function testMultipleLineWrap() {
 		$message = 'I am text that will wrap to two lines because I am long.';
 		$expected = '  --------------------------------------------------
@@ -53,6 +57,7 @@ class CowTest extends TestCase {
 		$this->assertCow($expected, $message);
 	}
 
+	#[Test]
 	public function testMultipleLineBreak() {
 		$message = 'I am line one.' . PHP_EOL .
 			'I am line two.' . PHP_EOL .
@@ -70,6 +75,7 @@ class CowTest extends TestCase {
 		$this->assertCow($expected, $message);
 	}
 
+	#[Test]
 	public function testUnicodeLineLength() {
 		$message = 'Ünícødé íß mågïcål';
 		$expected = '  ------------------
@@ -83,6 +89,7 @@ class CowTest extends TestCase {
 		$this->assertCow($expected, $message);
 	}
 
+	#[Test]
 	public function testCowTraits() {
 		$message = 'I output a single line';
 		$expected = '  ----------------------
@@ -103,6 +110,7 @@ class CowTest extends TestCase {
 		$this->assertSame($expected, $c->say());
 	}
 
+	#[Test]
 	public function testEyesTruncation() {
 		$message = 'I output a single line';
 		$expected = '  ----------------------
@@ -120,6 +128,7 @@ class CowTest extends TestCase {
 		$this->assertSame($expected, $c->say());
 	}
 
+	#[Test]
 	public function testEmptyInput() {
 		$message = '';
 		$expected = '  
