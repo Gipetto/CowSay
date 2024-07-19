@@ -21,7 +21,7 @@ jobs:
     env:
       LEGACY: true
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -50,7 +50,7 @@ jobs:
     continue-on-error: ${{ matrix.unstable }}
     name: CURRENT PHP ${{ matrix.php-versions }} test on ${{ matrix.operating-system }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
