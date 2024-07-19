@@ -9,7 +9,7 @@ An extensible PHP port of the [Linux Cowsay](http://en.wikipedia.org/wiki/Cowsay
 
 ## Requirements
 
-- Minimum: PHP 8.0+
+- Minimum: PHP 8.0.2+
 - Recommended: PHP 8.2+
 
 Official PHP supported versions: https://www.php.net/supported-versions.php
