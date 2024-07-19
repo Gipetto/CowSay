@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace CowSay;
 
+use CowSay\Core\TraitGetter;
+use \ReflectionObject;
 
 /**
  * Class Cow
@@ -26,16 +28,4 @@ class Cow extends \CowSay\Core\Calf {
               (__)\       )\/\\
                {tongue}  ||----{udder} |
                   ||     || {poop}';
-
-	/**
-	 * @return string
-	 */
-	protected function buildCarcass(): string {
-		return strtr($this->carcass, [
-			'{eyes}' => $this->getEyes(),
-			'{tongue}' => $this->getTongue(),
-			'{udder}' => $this->getUdder(),
-			'{poop}' => $this->getPoop()
-		]);
-	}
 }

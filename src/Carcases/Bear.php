@@ -68,17 +68,4 @@ BEAR;
 		$this->eyes = $eyes;
 		return $this;
 	}
-
-	/**
-	 * Use sprintf to do variable replacement on the carcass
-	 *
-	 * @see http://php.net/sprintf
-	 *
-	 * @return string
-	 */
-	protected function buildCarcass(): string {
-		return strtr($this->carcass, [ 
-			'{eyes}' => $this->getEyes() 
-		]);
-	}
 }

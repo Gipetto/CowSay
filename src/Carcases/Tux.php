@@ -22,11 +22,4 @@ class Tux extends \CowSay\Core\Calf {
     /\'\_   _/`\
     \___)=(___/';
 
-	/**
-	 * @return string
-	 */
-	protected function buildCarcass(): string {
-		return $this->carcass;
-	}
-
 }

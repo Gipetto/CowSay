@@ -21,13 +21,4 @@ class Sheep extends \CowSay\Core\Calf {
            `YY~~~~YY\'
             ||    ||';
 
-	/**
-	 * @return string
-	 */
-	protected function buildCarcass(): string {
-		return $this->carcass;
-	}
-
 }
-
-

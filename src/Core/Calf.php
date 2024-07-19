@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 namespace CowSay\Core;
+use ReflectionObject;
 use Symfony\Component\String\UnicodeString;
 
 /**
@@ -55,12 +56,27 @@ abstract class Calf implements \Stringable {
 	}
 
 	/**
-	 * Build the output
-	 * 
-	 * @see Cowsay\Cow for an example
 	 * @return string
 	 */
-	abstract protected function buildCarcass(): string;
+	protected function buildCarcass(): string {
+		$data = [];
+		$reflection = new ReflectionObject($this);
+
+		foreach ($reflection->getMethods() as $method) {
+			$attributes = $method->getAttributes(TraitGetter::class);
+
+			if (count($attributes)) {
+				$methodName = $method->getName();
+			
+				foreach ($attributes as $attribute) {
+					$instance = $attribute->newInstance();
+					$data[$instance->getKeyName()] = $this->$methodName();
+				}
+			}
+		}
+
+		return strtr($this->carcass, $data);
+	}
 
 	/**
 	 * @param $maxLen

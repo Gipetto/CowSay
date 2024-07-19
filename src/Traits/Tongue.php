@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace CowSay\Traits;
 
+use CowSay\Core\TraitGetter;
 
 trait Tongue {
 
@@ -20,9 +21,7 @@ trait Tongue {
 		return $this;
 	}
 
-	/**
-	 * @return string
-	 */
+	#[TraitGetter('tongue')]
 	public function getTongue(): string {
 		return $this->tongue;
 	}
