@@ -15,8 +15,8 @@ jobs:
     strategy:
       matrix:
         operating-system: ["ubuntu-20.04"]
-        php-versions: ["7.4", "8.0"]
-        phpunit-versions: ["8.5.17"]
+        php-versions: ["8.0"]
+        phpunit-versions: ["9.6.20"]
     name: LEGACY PHP ${{ matrix.php-versions }} test on ${{ matrix.operating-system }}
     env:
       LEGACY: true

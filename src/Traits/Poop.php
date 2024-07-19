@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace CowSay\Traits;
 
+use CowSay\Core\TraitGetter;
 
 trait Poop {
 
@@ -20,9 +21,7 @@ trait Poop {
 		return $this;
 	}
 
-	/**
-	 * @return string
-	 */
+	#[TraitGetter('poop')]
 	public function getPoop(): string {
 		return $this->poop;
 	}

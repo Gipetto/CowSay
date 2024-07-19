@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace CowSay\Traits;
 
+use CowSay\Core\TraitGetter;
 
 trait Udder {
 
@@ -20,9 +21,7 @@ trait Udder {
 		return $this;
 	}
 
-	/**
-	 * @return string
-	 */
+	#[TraitGetter('udder')]
 	public function getUdder(): string {
 		return $this->udder;
 	}

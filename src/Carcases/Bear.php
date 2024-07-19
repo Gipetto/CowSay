@@ -25,7 +25,7 @@ class Bear extends \CowSay\Core\Calf {
      \
       \ _     _
        (o\---/o)
-        ( %s )
+        ( {eyes} )
        _( (T) )_
       / /     \ \
      / /       \ \
@@ -67,16 +67,5 @@ BEAR;
 
 		$this->eyes = $eyes;
 		return $this;
-	}
-
-	/**
-	 * Use sprintf to do variable replacement on the carcass
-	 *
-	 * @see http://php.net/sprintf
-	 *
-	 * @return string
-	 */
-	protected function buildCarcass(): string {
-		return sprintf($this->carcass, $this->getEyes());
 	}
 }

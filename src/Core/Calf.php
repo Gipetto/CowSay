@@ -2,6 +2,9 @@
 declare(strict_types=1);
 
 namespace CowSay\Core;
+
+use Stringable;
+use ReflectionObject;
 use Symfony\Component\String\UnicodeString;
 
 /**
@@ -12,7 +15,7 @@ use Symfony\Component\String\UnicodeString;
  * @method $this getTongue
  * @method $this getUdder
  */
-abstract class Calf {
+abstract class Calf implements Stringable {
 
 	const DEFAULT_MAX_LEN = 50;
 
@@ -55,11 +58,27 @@ abstract class Calf {
 	}
 
 	/**
-	 * Return the cow template with eyes & tongue replaces
-	 *
 	 * @return string
 	 */
-	abstract protected function buildCarcass(): string;
+	protected function buildCarcass(): string {
+		$data = [];
+		$reflection = new ReflectionObject($this);
+
+		foreach ($reflection->getMethods() as $method) {
+			$attributes = $method->getAttributes(TraitGetter::class);
+
+			if (count($attributes)) {
+				$methodName = $method->getName();
+			
+				foreach ($attributes as $attribute) {
+					$instance = $attribute->newInstance();
+					$data[$instance->getKeyName()] = $this->$methodName();
+				}
+			}
+		}
+
+		return strtr($this->carcass, $data);
+	}
 
 	/**
 	 * @param $maxLen
@@ -170,16 +189,11 @@ abstract class Calf {
 					$value .= str_repeat(' ', $padding);
 				}
 
-				switch ($key) {
-					case 0;
-						$output[] = '/ ' . $value . ' \\';
-						break;
-					case $lastLine:
-						$output[] = '\\ ' . $value . ' /';
-						break;
-					default:
-						$output[] = '| ' . $value . ' |';
-				}
+				$output[] = match ($key) {
+					0 => '/ ' . $value . ' \\',
+					$lastLine => '\\ ' . $value . ' /',
+					default => '| ' . $value . ' |'
+				};
 			}
 		}
 

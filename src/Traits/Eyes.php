@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace CowSay\Traits;
 
+use CowSay\Core\TraitGetter;
 
 trait Eyes {
 
@@ -29,9 +30,7 @@ trait Eyes {
 		return $this;
 	}
 
-	/**
-	 * @return string
-	 */
+	#[TraitGetter('eyes')]
 	public function getEyes(): string {
 		return $this->eyes;
 	}
