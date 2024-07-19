@@ -78,7 +78,7 @@ class Bear extends \CowSay\Core\Calf {
      \
       \ _     _
        (o\---/o)
-        ( %s )
+        ( {eyes} )
        _( (T) )_
       / /     \ \
      / /       \ \
@@ -107,7 +107,9 @@ BEAR;
 	}
 
 	protected function buildCarcass(): string {
-		return sprintf($this->carcass, $this->getEyes());
+		return strtr($this->carcass, [
+      '{eyes}' => $this->getEyes()
+    ]);
 	}
 }
 ```

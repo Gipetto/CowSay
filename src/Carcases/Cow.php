@@ -22,15 +22,20 @@ class Cow extends \CowSay\Core\Calf {
 	 */
 	protected string $carcass = '
           \   ^__^
-           \  (%s)\_______
+           \  ({eyes})\_______
               (__)\       )\/\\
-               %s  ||----%s |
-                  ||     || %s';
+               {tongue}  ||----{udder} |
+                  ||     || {poop}';
 
 	/**
 	 * @return string
 	 */
 	protected function buildCarcass(): string {
-		return sprintf($this->carcass, $this->getEyes(), $this->getTongue(), $this->getUdder(), $this->getPoop());
+		return strtr($this->carcass, [
+			'{eyes}' => $this->getEyes(),
+			'{tongue}' => $this->getTongue(),
+			'{udder}' => $this->getUdder(),
+			'{poop}' => $this->getPoop()
+		]);
 	}
 }
