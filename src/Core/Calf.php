@@ -12,7 +12,7 @@ use Symfony\Component\String\UnicodeString;
  * @method $this getTongue
  * @method $this getUdder
  */
-abstract class Calf {
+abstract class Calf implements \Stringable {
 
 	const DEFAULT_MAX_LEN = 50;
 
@@ -170,16 +170,11 @@ abstract class Calf {
 					$value .= str_repeat(' ', $padding);
 				}
 
-				switch ($key) {
-					case 0;
-						$output[] = '/ ' . $value . ' \\';
-						break;
-					case $lastLine:
-						$output[] = '\\ ' . $value . ' /';
-						break;
-					default:
-						$output[] = '| ' . $value . ' |';
-				}
+				$output[] = match ($key) {
+					0 => '/ ' . $value . ' \\',
+					$lastLine => '\\ ' . $value . ' /',
+					default => '| ' . $value . ' |'
+				};
 			}
 		}
 
