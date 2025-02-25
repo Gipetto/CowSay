@@ -5,6 +5,8 @@ on:
   push:
     branches: [ master ]
   pull_request:
+    # @todo: this publishes to GH Pages on PR runs, fix
+    #        to only run on merges to master
     branches: [ master ]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -67,12 +69,6 @@ jobs:
         with:
           percentage: "98"
           filename: "clover.xml"
-      # - name: Upload Coverage on Failure
-      #   if: failure()
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: clover-coverage
-      #     path: coverage
       - name: Run demo file
         run: php demo.php
   # Final step to wrap up a singular protected branch action
@@ -89,6 +85,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: demo
+          folder: ../demo
 
     
