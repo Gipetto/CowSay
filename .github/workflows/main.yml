@@ -80,6 +80,7 @@ jobs:
     needs: ["test-all-required"]
     if: github.ref == 'refs/heads/master'
     steps:
+      - uses: actions/checkout@v4
       - name: Publish to GH Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
