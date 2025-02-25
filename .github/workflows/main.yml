@@ -81,4 +81,14 @@ jobs:
     needs: ["test-legacy", "test"]
     steps:
       - run: echo "Done!"
+  publish:
+    runs-on: ubuntu-latest
+    needs: ["test-all-required"]
+    steps:
+      - name: Publish to GH Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: demo
+
     

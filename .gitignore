@@ -10,3 +10,4 @@ clover.xml
 coverage
 .vscode
 *.bak
+demo/watch.sh
