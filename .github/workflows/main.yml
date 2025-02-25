@@ -38,15 +38,15 @@ jobs:
     strategy:
       matrix:
         operating-system: ["ubuntu-latest"]
-        php-versions: ["8.1", "8.2"]
+        php-versions: ["8.1", "8.2", "8.3"]
         phpunit-versions: ["latest"]
         unstable: [false]
         include:
-          - php-versions: "8.3"
+          - php-versions: "8.4"
             operating-system: "ubuntu-latest"
             unstable: true
     env:
-      COVERAGE_VERSION: "8.2"
+      COVERAGE_VERSION: "8.3"
     continue-on-error: ${{ matrix.unstable }}
     name: CURRENT PHP ${{ matrix.php-versions }} test on ${{ matrix.operating-system }}
     steps:
