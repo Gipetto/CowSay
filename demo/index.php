@@ -86,7 +86,7 @@
     h2,
     h3 {
       line-height: 1.1;
-      margin-block: 1rem 0.5rem;
+      margin-block: 2rem 1rem;
     }
 
     h1 + div,
@@ -119,6 +119,7 @@
     code {
       white-space: preserve-breaks;
       line-height: 1.1rem;
+      display: block;
     }
 
     code .comment {
@@ -317,9 +318,7 @@
       <h2>QuickStart</h2>
       <h3>Install</h3> 
       <code>
-        <pre>
-$ composer require Gipetto/CowSay
-        </pre>
+        <pre>$ composer require Gipetto/CowSay</pre>
       </code>
 
       <h3>Usage</h3>
@@ -354,6 +353,12 @@ $ composer require Gipetto/CowSay
           </code>
         </div><!-- .code -->
       </div><!-- .sample -->
+
+      <h3>Additional Docs</h3>
+      <ul>
+        <li><a href="https://github.com/Gipetto/CowSay/blob/master/docs/Carcasses.md">Adding custom Carcasses</a></li>
+        <li><a href="https://github.com/Gipetto/CowSay/blob/master/docs/CustomTraits.md">Adding custom Traits</a></li>
+      </ul>
     </section>
 
     <section>

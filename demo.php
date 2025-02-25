@@ -1,8 +1,8 @@
 <?php
 
-require_once "../vendor/autoload.php";
+require_once "./vendor/autoload.php";
 
-$carcases = glob("../src/Carcases/*.php");
+$carcases = glob("./src/Carcases/*.php");
 
 foreach ($carcases as $carcass) {
 	$class = '\\CowSay\\' . basename($carcass, ".php");
