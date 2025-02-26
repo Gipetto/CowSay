@@ -17,7 +17,7 @@ use Symfony\Component\String\UnicodeString;
  */
 abstract class Calf implements Stringable {
 
-	const DEFAULT_MAX_LEN = 50;
+	final const DEFAULT_MAX_LEN = 50;
 
 	/**
 	 * @var string carcass!
@@ -43,7 +43,7 @@ abstract class Calf implements Stringable {
 	 * @param $message
 	 * @param int $maxLen
 	 */
-	public function __construct($message = '', int $maxLen = self::DEFAULT_MAX_LEN) {
+	public function __construct(string $message = '', int $maxLen = self::DEFAULT_MAX_LEN) {
 		$this->setMessage($message);
 		$this->setMaxLen($maxLen);
 	}
@@ -69,7 +69,7 @@ abstract class Calf implements Stringable {
 
 			if (count($attributes)) {
 				$methodName = $method->getName();
-			
+
 				foreach ($attributes as $attribute) {
 					$instance = $attribute->newInstance();
 					$data[$instance->getKeyName()] = $this->$methodName();
@@ -149,7 +149,7 @@ abstract class Calf implements Stringable {
 
 		foreach ($lines as $line) {
 			$strLen = max(
-				$strLen, 
+				$strLen,
 				$line->width() > $this->getMaxLen() ? $line->width() : min($this->getMaxLen(), $line->width())
 			);
 		}
@@ -222,7 +222,7 @@ abstract class Calf implements Stringable {
 		}
 
 		$traits = array_map(
-			fn ($trait) => str_replace('CowSay\\Traits\\', '', $trait), 
+			fn ($trait) => str_replace('CowSay\\Traits\\', '', $trait),
 			$traits
 		);
 

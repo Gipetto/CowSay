@@ -8,7 +8,7 @@ use Attribute;
 class TraitGetter {
 	public function __construct(public string $trait) {}
 
-	public function getKeyName() {
+	public function getKeyName(): string {
 		return sprintf('{%s}',  $this->trait);
 	}
 }
