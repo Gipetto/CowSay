@@ -2,6 +2,11 @@
 
 See https://github.com/Gipetto/CowSay/releases for release dates.
 
+## 2.1.0
+- Deprecate support for PHP 8
+- Move PHP 8.1 to legacy
+- New Demo page on GH Pages
+
 ## 2.0
 - Deprecate support for PHP 7.4
 - Use PHP Attributes to specify Trait string getters so that we can automagically build the carcass output. Extended carcasses no longer need to define their own `buildCarcass` function. This remains backwards compatible with custom made Carcasses that still use an old style `buildCarcass` method.
