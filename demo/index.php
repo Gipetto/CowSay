@@ -2,12 +2,12 @@
   function doCow($class) {
     /** @var $obj Cowsay\Core\Calf */
     $obj = new $class();
-  
+
     $poop = false;
     $message = "How now brown " . $class . "." . PHP_EOL;
-  
+
     $traits = $obj->getSupportedTraits();
-  
+
     if (!count($traits)) {
       $message .= "I don't support any Traits.";
     } else {
@@ -19,7 +19,7 @@
         $message .= PHP_EOL . " • " . $trait;
       }
     }
-  
+
     $obj->setMessage($message);
     if ($poop) {
       $obj->setPoop("oOo");
@@ -69,7 +69,7 @@
     body {
       font-family: system-ui;
       line-height: 1.8;
-      padding: 2rem;
+      padding: clamp(0.125rem, -1.125rem + 5vw, 2rem);
       text-rendering: optimizeLegibility;
       font-variant-ligatures: common-ligatures;
       font-variant-numeric: oldstyle-nums stacked-fractions;
@@ -95,7 +95,7 @@
     }
 
     h1 {
-      font-size: clamp(2.75rem, 10vw - 1rem, 4.5rem);
+      font-size: clamp(2.5rem, 9vw - 1rem, 4.5rem);
     }
 
     h2 {
@@ -115,7 +115,7 @@
       font-family: monospace;
       line-height: 1.1rem;
     }
-    
+
     code {
       white-space: preserve-breaks;
       line-height: 1.1rem;
@@ -154,7 +154,7 @@
       overflow: clip;
       background: black;
       border-radius: var(--border-radius);
-      box-shadow: 
+      box-shadow:
         0 0 0 1px rgb(100, 100, 100),
         0 0 0 2px rgb(50, 50, 50),
         var(--box-shadow);
@@ -222,7 +222,7 @@
       border-start-end-radius: var(--border-radius-inner);
       box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.75);
     }
-      
+
     .sample .code {
       padding: 1rem 1rem 0.9rem 1rem;
     }
@@ -281,7 +281,7 @@
 <body>
   <div class="wrapper">
     <header>
-      <h1>Gipetto: CowSay</h1>
+      <h1>Gipetto/CowSay</h1>
     </header>
 
     <section>
@@ -291,7 +291,7 @@
         <a href="https://github.com/Gipetto/CowSay/actions/workflows/main.yml"><img src="https://github.com/Gipetto/CowSay/actions/workflows/main.yml/badge.svg" alt="Build Status" /></a>
         <img src="https://img.shields.io/badge/Moo-Cow-orange.svg" alt="Moo, Cow" />
       </p>
-      <p>        
+      <p>
         <a href="https://github.com/Gipetto/CowSay">
           <svg class="icon" role="img" width="16" height="16" viewBox="0 0 24 24" fill="#000" xmlns="http://www.w3.org/2000/svg"><title><!---->GitHub icon<!----></title><g><!----><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path><!----></g></svg>
           <span>View on Github</span>
@@ -316,7 +316,7 @@
 
     <section>
       <h2>QuickStart</h2>
-      <h3>Install</h3> 
+      <h3>Install</h3>
       <code>
         <pre>$ composer require Gipetto/CowSay</pre>
       </code>
@@ -341,13 +341,13 @@
         </header>
         <div class="code">
           <code><span class="src">use CowSay\Cow;</span>
-    
+
     <span class="var">$bessie</span> <span class="src">=</span> <span class="src">new</span> <span class="cls">Cow(<span class="str">"Hello, Farm!"</span>)</span>;
-    
+
     <span class="comment">// store the output in a variable</span>
     <span class="var">$output</span> <span class="src">=</span> <span class="var">$bessie</span><span class="cmd">->say()</span>;
     <span class="cmd">echo</span> <span class="var">$output</span>;
-    
+
     <span class="comment">// or just echo the object for direct output</span>
     <span class="cmd">echo</span> <span class="var">$bessie</span>;
           </code>
@@ -368,7 +368,7 @@
   require_once "../vendor/autoload.php";
 
   $carcases = glob("../src/Carcases/*.php");
-  
+
   foreach ($carcases as $carcass):
     $class = '\\CowSay\\' . basename($carcass, ".php");
     $obj = doCow($class);
@@ -381,7 +381,7 @@
             </pre>
           </code>
         </div><!-- .cow -->
-<?php    
+<?php
     unset($obj);
   endforeach;
 ?>
