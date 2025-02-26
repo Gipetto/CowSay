@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gipetto: CowSay</title>
-  <link rel="stylesheet" href="css/style.css">
   <meta name="description" content="">
 
   <meta property="og:title" content="CowSay">
@@ -312,16 +311,18 @@
           </div>
         </header>
         <div class="code">
-          <code><span class="src">use CowSay\Cow;</span>
+          <code><span class="src">&lt;?php</span>
 
-    <span class="var">$bessie</span> <span class="src">=</span> <span class="src">new</span> <span class="cls">Cow(<span class="str">"Hello, Farm!"</span>)</span>;
+  <span class="src">use CowSay\Cow;</span>
 
-    <span class="comment">// store the output in a variable</span>
-    <span class="var">$output</span> <span class="src">=</span> <span class="var">$bessie</span><span class="cmd">->say()</span>;
-    <span class="cmd">echo</span> <span class="var">$output</span>;
+  <span class="var">$bessie</span> <span class="src">=</span> <span class="src">new</span> <span class="cls">Cow(<span class="str">"Hello, Farm!"</span>)</span>;
 
-    <span class="comment">// or just echo the object for direct output</span>
-    <span class="cmd">echo</span> <span class="var">$bessie</span>;
+  <span class="comment">// store the output in a variable</span>
+  <span class="var">$output</span> <span class="src">=</span> <span class="var">$bessie</span><span class="cmd">->say()</span>;
+  <span class="cmd">echo</span> <span class="var">$output</span>;
+
+  <span class="comment">// or just echo the object for direct output</span>
+  <span class="cmd">echo</span> <span class="var">$bessie</span>;
           </code>
         </div><!-- .code -->
       </div><!-- .sample -->
