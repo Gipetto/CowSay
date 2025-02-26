@@ -28,3 +28,6 @@ test:
 
 demo:
 	php demo.php
+
+serve-demo:
+	cd demo && php -S localhost:8000 index.php

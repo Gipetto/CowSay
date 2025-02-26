@@ -75,6 +75,12 @@ jobs:
     if: github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v4
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.3
+      - name: Render HTML
+        run: cd demo && php index.php > index.html
       - name: Publish to GH Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
