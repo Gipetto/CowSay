@@ -1,7 +1,7 @@
 {
     "name": "gipetto/cowsay",
     "description": "An extensible PHP port of the Cowsay linux utility",
-    "homepage": "http://github.com/Gipetto/CowSay",
+    "homepage": "https://gipetto.github.io/CowSay/",
     "license": "MIT",
     "keywords": [
         "cow",
