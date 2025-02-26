@@ -79,6 +79,8 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: 8.3
+      - name: Composer Install
+        run: composer install --no-dev
       - name: Render HTML
         run: cd demo && php index.php > index.html
       - name: Publish to GH Pages
